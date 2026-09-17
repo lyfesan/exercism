@@ -1,0 +1,25 @@
+class AtbashCipher {
+  
+  String encode(String s){
+    String cipher = "";
+    for (var char in s.runes) {
+      if(char >= 'a'.codeUnitAt(0) && char <= 'z'.codeUnitAt(0)){
+        var codedChar = 'a'.codeUnitAt(0) + 'z'.codeUnitAt(0) - char;
+        cipher+=String.fromCharCode(codedChar);
+      }
+    }
+    return cipher;
+  }
+
+  String decode(String s){
+    String text="";
+    for (var char in s.runes) {
+      if(char >= 'a'.codeUnitAt(0) && char <= 'z'.codeUnitAt(0)){
+        var originalChar = 'a'.codeUnitAt(0) + 'z'.codeUnitAt(0) - char;
+      text+=String.fromCharCode(originalChar);
+      }
+      
+    }
+    return text;
+  }
+}
